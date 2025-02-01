@@ -1,10 +1,10 @@
 def binarySort(array, key, offset=0):
     if not array:
-        return "Key not found"
+        return -1 # If key not found, return -1
     
     # If slice has one element, check it directly.
     if len(array) == 1:
-        return offset if array[0] == key else "Key not found"
+        return offset if array[0] == key else -1
     
     midIndex = len(array) // 2
     middleValue = array[midIndex]
@@ -20,4 +20,4 @@ def binarySort(array, key, offset=0):
         return binarySort(array[:midIndex], key, offset)
 
 # Example usage:
-print(binarySort([2, 4, 6, 8], 2))
+print(binarySort([], 2))
